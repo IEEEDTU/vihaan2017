@@ -53,6 +53,7 @@
 
   <!--<link rel="stylesheet" type="text/css" href="/signup/style.css">-->
   <link rel="stylesheet" type="text/css" href="themes/default/style.css">
+    <link rel="stylesheet" type="text/css" href="themes/default/timeline.css">
   <link href='http://fonts.googleapis.com/css?family=Lora:400italic|Source+Sans+Pro:300,400,600,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="./maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -1062,8 +1063,8 @@ body {
         <input id="header-nav-icon-toggle" class="header-nav-icon-toggle" type="checkbox">
         <nav class="header-nav">
           <a href="index.html" class="header-nav-link  header-nav-link-start">Home</a>
-          <a href="speakers.html" class="header-nav-link  header-nav-link-speakers">Speakers</a>
           <a href="schedule.html" class="header-nav-link  header-nav-link-schedule">Schedule</a>
+            <a href="#sponsors" class="header-nav-link  header-nav-link-speakers">Sponsors</a>
           <a href="rules.html" class="header-nav-link  header-nav-link-info">Rules</a>
           <a href="signup/index.html" class="header-nav-link header-nav-rsvp-btn signup-trigger">Register</a>
 <!--
@@ -1146,8 +1147,7 @@ body {
         <div class="nordicjs-text-text">
           <h3>A place for design & great&nbsp;experiences</h3>
           <p>
-           Nordic.design will take place at Nobelberget, a new international venue for music, art and food – located just 10 minutes from the city centre. 
-    
+           Some random text about hackathon/vihaan.
           </p>
         </div>
       </div>
@@ -1166,7 +1166,7 @@ body {
       
     ">
         <div class="speakers-content fade-in-on-scroll">
-          <h2 class="heading">Inspiring speakers</h2>
+          <h2 class="heading">Judges and Mentors</h2>
           <div class="speakers-list">
               <div class="speakers-speaker tim-van-damme" id="tim-van-damme">
                 <a href="speakers.html#tim-van-damme">
@@ -1576,8 +1576,7 @@ body {
         
         <div class="nordicjs-text-text">
           <h3>A place for design & great&nbsp;experiences</h3>
-    <p>
-           Nordic.design will take place at <a href="https://www.google.com/maps/place/Nobelberget/@59.304651,18.1178091,15z/data=!4m5!3m4!1s0x0:0xe55a36c9b8eb94ee!8m2!3d59.304651!4d18.1178091" target="_blank">Nobelberget</a>, a new international venue for music, art and food – located just 10 minutes from the city centre.</p>
+            <p>Some Text if we want.</p>
         </div>
       </div>
     
@@ -1611,6 +1610,71 @@ body {
       </div>
     </section>
       </section>
+    
+    
+    
+    
+    
+<!--  ==================Schedule==================   -->
+
+    
+<div class="container">
+  <section class="text-section nordicjs-text-section-center ">
+     <div class="text-content nordicjs-text-content fade-in-on-scroll">
+        
+        <div class="nordicjs-text-text">
+          <h3>Schedule</h3>
+<!--            <p>Some Text if we want.</p>-->
+        </div>
+      </div>
+    
+    </section>
+
+<section class="timeline">
+  <ul>
+    <li>
+      <div>
+        <time>Day 1 : 8:30 AM </time> Breakfast
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Day 1 : 1:00 PM</time> Lunch
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Day 1 : 8:30PM</time> dinner
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Day 2 : 2:00AM</time> Mid Night Snacks
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Day 2 : 8:00AM</time> Breakfast
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Day 2 : 2:00PM</time> Lunch.
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>Day 2 : 5:00PM</time> Pitching Session
+      </div>
+    </li>
+  </ul>
+</section>   
+    
+    
+    
+<!--  ===================== End of schedule =====================    -->
+    
+    
       <section class="block-464 custom-section">
         <section class="section nordicjs-text-section ">
       <div class="content nordicjs-text-content fade-in-on-scroll nordicjs-content-reverse">
@@ -1671,7 +1735,7 @@ body {
       </section>
     <section class="block-1217 sponsors-section">
         <div class="sponsors-section-background-image" data-image="https://images.confetticdn.com/images/scale/w_500,f_auto/event-6912/image-9e0e90f8-e636-450d-8abb-9396951f4041/bg-splash.png"></div>
-      <div class="sponsors-content fade-in-on-scroll">
+      <div class="sponsors-content fade-in-on-scroll" id="sponsors">
           <div class="sponsor-level sponsor-level-2216 sponsor-level-style-large main-sponsor">
             <h2 class="heading">Main Sponsor</h2>
             <div class="sponsor-level-sponsors">
@@ -2235,6 +2299,42 @@ body {
     Confetti.tracker.t('pageview')
   
   </script>
+  <script>
+    (function() {
+
+  'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();
+    
+    </script>
 
 </body>
 
