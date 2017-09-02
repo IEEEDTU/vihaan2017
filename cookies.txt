@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+nordic.design	TRUE	/	FALSE	1999999999	express:sess	eyJjc3JmU2VjcmV0IjoiY05OX0R3SnMyUFFRcXYyNnU0VWhlV25xIiwiZmxhc2giOnt9fQ==
+nordic.design	TRUE	/	FALSE	1999999999	express:sess.sig	wdbIYjyHjjIBrddE-VcHa0thGFQ
+.confetticdn.com	TRUE	/	FALSE	1999999999	__cfduid	d6648b6bd65a5840bfcfbbda317f3484d1504378916
+confetti-eventalytics.herokuapp.com	TRUE	/	FALSE	1999999999	id	1e8a4a81-099a-4c85-9b67-ea8c68dfe299
+confetti.events	TRUE	/	FALSE	1999999999	connect.sess	s%3Aj%3A%7B%22csrfSecret%22%3A%22Oo144JZiEl_3tYA0fAKaPQLl%22%7D.aPQOP9djPSBmB%2Fh0Vw1v0R8Fx9B3E9o9C8BhVAFHREk
+
