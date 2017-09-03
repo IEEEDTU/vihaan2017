@@ -154,6 +154,13 @@ button.accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
     color: #fff;
 }
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
 .wf-loading .header-section, .wf-loading .email-field, .wf-loading .signup-section-button, .wf-loading .header-nav a{
   color: white;
 }
@@ -708,13 +715,7 @@ h10 {
   }
 
 
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
+
 
   .signup-pitch {
     font-size: 28px;
