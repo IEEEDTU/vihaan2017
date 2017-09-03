@@ -124,7 +124,36 @@ body {
   background: white;
   color: #0E123F;
 }
+  
+button.accordion {
+    background-color: #243EEE;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
 
+button.accordion.active, button.accordion:hover {
+    background-color: #243DDD;
+}
+
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #fff;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    color: #fff;
+}
 .wf-loading .header-section, .wf-loading .email-field, .wf-loading .signup-section-button, .wf-loading .header-nav a{
   color: white;
 }
@@ -677,36 +706,7 @@ h10 {
     background-color: transparent;
     box-shadow: none;
   }
-  
-button.accordion {
-    background-color: #243EEE;
-    color: #fff;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 20px;
-    transition: 0.4s;
-}
 
-button.accordion.active, button.accordion:hover {
-    background-color: #243DDD;
-}
-
-button.accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #fff;
-    float: right;
-    margin-left: 5px;
-}
-
-button.accordion.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-    color: #fff;
-}
 
 div.panel {
     padding: 0 18px;
