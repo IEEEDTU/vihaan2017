@@ -670,7 +670,30 @@ body {
     box-shadow: none;
   }
   
+button.accordion {
+    background-color: #243EEE;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
 
+button.accordion.active, button.accordion:hover {
+    background-color: #243DDD;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
 
   .signup-pitch {
     font-size: 28px;
@@ -1064,9 +1087,11 @@ body {
         <nav class="header-nav">
           <a href="index.html" class="header-nav-link  header-nav-link-start">Home</a>
           <a href="#schedule" class="header-nav-link  header-nav-link-schedule">Schedule</a>
-            <a href="#sponsors" class="header-nav-link  header-nav-link-speakers">Sponsors</a>
+          <a href="#sponsors" class="header-nav-link  header-nav-link-speakers">Sponsors</a>
           <a href="rules.html" class="header-nav-link  header-nav-link-info">Rules</a>
+          <a href="#faq" class="header-nav-link  header-nav-link-faq">FAQs</a>
           <a href="signup/index.html" class="header-nav-link header-nav-rsvp-btn signup-trigger">Register</a>
+            <a href="#contact" class="header-nav-link  header-nav-link-contact">Contact</a>
 <!--
            <span class="header-nav-years">
     
@@ -1670,7 +1695,11 @@ body {
     
 <!--  ===================== End of schedule =====================    -->
     
+<!--  ==================FAQ==================   -->
+
     
+<div class="container" id="faq">
+
       <section class="block-464 custom-section">
         <section class="section nordicjs-text-section ">
       <div class="content nordicjs-text-content fade-in-on-scroll nordicjs-content-reverse">
@@ -1679,13 +1708,87 @@ body {
         </div>
         <div class="nordicjs-column-spacer"></div>
         <div class="nordicjs-text-text">
-          <h3>This is also option</h3>
-          <p>Remove if no use.</p>
+          <h3>Frequently Asked Questions</h3>
         </div>
     
       </div>
+            <button class="accordion">What is Vihaan?</button>
+<div class="panel">
+  <p> Vihaan is a venture of IEEE WIE, DTU with an objective of motivating girls to take up STEM Fields. This year, Vihaan is a 24 hour hackathon</p>
+</div>
+<br>
+<button class="accordion">When is Vihaan?</button>
+<div class="panel">
+  <p>27-28 October, 2017.</p>
+</div>
+<br>
+            <button class="accordion">Where is Vihaan?</button>
+<div class="panel">
+  <p>Delhi Technological University.</p>
+</div>
+<br>
+            <button class="accordion">Who should attend?</button>
+<div class="panel">
+  <p>University students who are passionate about programming.</p>
+</div>
+<br>
+<button class="accordion">How many members are required to make a team?</button>
+<div class="panel">
+  <p>A maximum of 3 members can form the team, with at least one female member.</p>
+</div>
+<br>            
+<button class="accordion">Is it an all girls event?</button>
+<div class="panel">
+  <p>No. A team must have 1 female participant.</p>
+</div>
+            <br>
+            <button class="accordion">Where can I find the rules?</button>
+<div class="panel">
+    <p>You can find them <a href="rules.html">here</a></p>
+</div>
+            <br>      
+            <button class="accordion">Are there any pre-requisites?</button>
+<div class="panel">
+  <p>No.</p>
+</div>
+    <br>      
+            <button class="accordion">Any special platform biased?</button>
+<div class="panel">
+  <p>The software can be a mobile or a web application! However, you may need to incorporate a sponsor's API or platform. This would be cleared in the event briefing and updates would be released on the website as well.</p>
+</div>
+    <br> 
+            <button class="accordion">What do you need to carry to the event?</button>
+<div class="panel">
+  <p>College ID, Confirmation mails and laptops!</p>
+</div>
+            <br>
+            <button class="accordion">Is the registration free of cost?</button>
+<div class="panel">
+  <p>Yes.</p>
+</div>
+            <br>
+            <button class="accordion">What is the criteria for shortlisting pf candidates?</button>
+<div class="panel">
+  <p>PArticipants will be shortlisted on the basis of their resume and github accounts.</p>
+</div>
+            <br>
     </section>
       </section>
+    
+    <div class="container" id="contact">
+
+     <section class="text-section nordicjs-text-section-center ">
+     <div class="text-content nordicjs-text-content fade-in-on-scroll">
+        
+        <div class="nordicjs-text-text">
+          <h3>Contact</h3>
+<!--            <p>Some Text if we want.</p>-->
+        </div>
+      </div>
+    
+    </section>
+    
+      </div>
       <!-- <section class="block-470 custom-section">
         <section class="section nordicjs-text-section">
     
@@ -1774,7 +1877,20 @@ body {
       <section class="block-461 custom-section">
         <script>
     
-    
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
     
     window.onload = (function(){
     
